@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   little_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dduraku <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 17:50:49 by dduraku           #+#    #+#             */
-/*   Updated: 2022/04/11 17:50:50 by dduraku          ###   ########.fr       */
+/*   Created: 2022/05/18 15:45:32 by dduraku           #+#    #+#             */
+/*   Updated: 2022/05/18 15:45:34 by dduraku          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_two_args(t_list *stack_a)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-	int		i;
-
-	ft_check_all_errors(argc, argv);
-	i = 2;
-	stack_a = init_list(argv);
-	stack_b = init_list(argv);
-	while (argv[i])
+	if (stack_a->first->value < stack_a->first->next->value)
+		return ;
+	else if (stack_a->first->value > stack_a->first->next->value)
 	{
-		add_back(stack_a, ft_atoi(argv[i]));
-		add_back(stack_b, ft_atoi(argv[i]));
-		i++;
+		swap_a(stack_a, 1);
+		write(1, "sa\n", 3);
 	}
-	if (argc == 3)
-		sort_two_args(stack_a);
-	else if (argc == 4)
-		sort_three_args(stack_a);
-	print_list(stack_a);
-	return (0);
+}
+
+void	sort_three_args(t_list *stack_a)
+{
+	if ((stack_a->first->value < stack_a->first->next->value)
+		&& (stack_a->first->value < stack_a->first->next->next->value))
+	{
+		swap_a(stack_a, 1);
+		rotate_a(stack_a, 1);
+	}
 }

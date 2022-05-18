@@ -43,12 +43,18 @@ void	print_list(t_list *list);
 void	add_back(t_list *list, int newNb);
 void	delete_first(t_list *list);
 void	delete_last(t_list *list);
-void	swap(t_list *stack_a);
+void	swap_a(t_list *stack_a, int message);
+void	swap_b(t_list *stack_b, int message);
+void	push_a(t_list *from_stack_b, t_list *to_stack_a);
+void	push_b(t_list *from_stack_a, t_list *to_stack_b);
+void	rotate_a(t_list *stack_a, int message);
+void	rotate_b(t_list *stack_b, int message);
+void	reverse_rotate_a(t_list *stack_a, int message);
+void	reverse_rotate_b(t_list *stack_b, int message);
 void	swap_both(t_list *stack_a, t_list *stack_b);
-void	push(t_list *from_stack, t_list *to_stack);
-void	rotate(t_list *stack);
-void	reverse_rotate(t_list *stack);
 void	rotate_both(t_list *stack_a, t_list *stack_b);
 void	reverse_rotate_both(t_list *stack_a, t_list *stack_b);
+void	sort_two_args(t_list *stack_a);
+void	sort_three_args(t_list *stack_a);
 
 #endif

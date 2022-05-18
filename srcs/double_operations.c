@@ -15,23 +15,26 @@
 void	swap_both(t_list *stack_a, t_list *stack_b)
 {
 	if (!stack_a || !stack_b)
-		ft_print_error();
-	swap(stack_a);
-	swap(stack_b);
+		exit(EXIT_FAILURE);
+	swap_a(stack_a, 0);
+	swap_b(stack_b, 0);
+	write(1, "ss\n", 3);
 }
 
 void	rotate_both(t_list *stack_a, t_list *stack_b)
 {
 	if (!stack_a || !stack_b)
 		exit(EXIT_FAILURE);
-	rotate(stack_a);
-	rotate(stack_b);
+	rotate_a(stack_a, 0);
+	rotate_b(stack_b, 0);
+	write(1, "rr\n", 3);
 }
 
 void	reverse_rotate_both(t_list *stack_a, t_list *stack_b)
 {
 	if (!stack_a || !stack_b)
 		exit(EXIT_FAILURE);
-	reverse_rotate(stack_a);
-	reverse_rotate(stack_b);
+	reverse_rotate_a(stack_a, 0);
+	reverse_rotate_b(stack_b, 0);
+	write(1, "rrr\n", 4);
 }
