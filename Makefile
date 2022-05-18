@@ -27,11 +27,13 @@ SRCS			=	areArgsValid.c\
 					argsUtils.c\
 					ft_print_error.c\
 					lists.c\
+					list_utils.c\
 					print_list.c\
 					operations_for_a.c\
 					operations_for_b.c\
 					double_operations.c\
-					little_sort.c
+					little_sort.c\
+					sort_utils.c
 
 MAIN			= push_swap.c
 

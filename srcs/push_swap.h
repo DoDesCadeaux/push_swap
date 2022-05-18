@@ -56,5 +56,11 @@ void	rotate_both(t_list *stack_a, t_list *stack_b);
 void	reverse_rotate_both(t_list *stack_a, t_list *stack_b);
 void	sort_two_args(t_list *stack_a);
 void	sort_three_args(t_list *stack_a);
+int		smallest_value(t_list *stack);
+int		biggest_value(t_list *stack);
+void	sort_four_args(t_list *stack_a, t_list *stack_b);
+void	two_last_index(t_list *stack_a, t_list *stack_b, int index);
+void	three_last_index(t_list *stack_a, t_list *stack_b, int index);
+void	sort_five_args(t_list *stack_a, t_list *stack_b);
 
 #endif

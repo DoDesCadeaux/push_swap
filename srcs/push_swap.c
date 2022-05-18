@@ -28,10 +28,10 @@ int	main(int argc, char **argv)
 		add_back(stack_b, ft_atoi(argv[i]));
 		i++;
 	}
-	if (argc == 3)
-		sort_two_args(stack_a);
-	else if (argc == 4)
-		sort_three_args(stack_a);
+	print_list(stack_a);
+	print_list(stack_b);
+	if (argc == 6)
+		sort_five_args(stack_a, stack_b);
 	print_list(stack_a);
 	return (0);
 }
