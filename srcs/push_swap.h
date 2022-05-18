@@ -51,5 +51,4 @@ void	reverse_rotate(t_list *stack);
 void	rotate_both(t_list *stack_a, t_list *stack_b);
 void	reverse_rotate_both(t_list *stack_a, t_list *stack_b);
 
-
 #endif

@@ -25,14 +25,6 @@ void	swap(t_list *stack)
 	stack->first->value = next_value;
 }
 
-void	swap_both(t_list *stack_a, t_list *stack_b)
-{
-	if (!stack_a || !stack_b)
-		ft_print_error();
-	swap(stack_a);
-	swap(stack_b);
-}
-
 void	push(t_list *from_stack, t_list *to_stack)
 {
 	if (!from_stack)
@@ -49,17 +41,9 @@ void	rotate(t_list *stack)
 	delete_first(stack);
 }
 
-void	rotate_both(t_list *stack_a, t_list *stack_b)
-{
-	if (!stack_a || !stack_b)
-		exit(EXIT_FAILURE);
-	rotate(stack_a);
-	rotate(stack_b);
-}
-
 void	reverse_rotate(t_list *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (!stack)
 		exit(EXIT_FAILURE);
@@ -68,12 +52,4 @@ void	reverse_rotate(t_list *stack)
 		temp = temp->next;
 	add_front(stack, temp->value);
 	delete_last(stack);
-}
-
-void	reverse_rotate_both(t_list *stack_a, t_list *stack_b)
-{
-	if (!stack_a || !stack_b)
-		exit(EXIT_FAILURE);
-	reverse_rotate(stack_a);
-	reverse_rotate(stack_b);
 }

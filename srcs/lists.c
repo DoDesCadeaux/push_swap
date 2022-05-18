@@ -88,18 +88,3 @@ void	delete_last(t_list *list)
 	new_last_node->next = NULL;
 	free(to_delete);
 }
-
-void	print_list(t_list *list)
-{
-	t_node	*this_node;
-
-	if (!list)
-		ft_print_error();
-	this_node = list->first;
-	while (this_node)
-	{
-		printf("[%d]->", this_node->value);
-		this_node = this_node->next;
-	}
-	printf("NULL\n");
-}
