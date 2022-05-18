@@ -25,10 +25,26 @@ void	sort_two_args(t_list *stack_a)
 
 void	sort_three_args(t_list *stack_a)
 {
-	if ((stack_a->first->value < stack_a->first->next->value)
+	if ((stack_a->first->value > stack_a->first->next->value)
+		&& (stack_a->first->value < stack_a->first->next->next->value))
+		swap_a(stack_a, 1);
+	else if ((stack_a->first->value > stack_a->first->next->value)
+		&& (stack_a->first->value > stack_a->first->next->next->value)
+		&& (stack_a->first->next->value > stack_a->first->next->next->value))
+	{
+		swap_a(stack_a, 1);
+		reverse_rotate_a(stack_a, 1);
+	}
+	else if ((stack_a->first->value < stack_a->first->next->value)
 		&& (stack_a->first->value < stack_a->first->next->next->value))
 	{
 		swap_a(stack_a, 1);
 		rotate_a(stack_a, 1);
 	}
+	else if ((stack_a->first->value > stack_a->first->next->value)
+		&& (stack_a->first->next->value < stack_a->first->next->next->value))
+		rotate_a(stack_a, 1);
+	else if ((stack_a->first->value < stack_a->first->next->value)
+		&& (stack_a->first->next->value > stack_a->first->next->next->value))
+		reverse_rotate_a(stack_a, 1);
 }
