@@ -28,5 +28,6 @@ int	main(int argc, char **argv)
 		add_back(stack_b, ft_atoi(argv[i]));
 		i++;
 	}
+
 	return (0);
 }

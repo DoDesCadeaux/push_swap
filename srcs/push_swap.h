@@ -45,5 +45,11 @@ void	delete_first(t_list *list);
 void	delete_last(t_list *list);
 void	swap(t_list *stack_a);
 void	swap_both(t_list *stack_a, t_list *stack_b);
+void	push(t_list *from_stack, t_list *to_stack);
+void	rotate(t_list *stack);
+void	reverse_rotate(t_list *stack);
+void	rotate_both(t_list *stack_a, t_list *stack_b);
+void	reverse_rotate_both(t_list *stack_a, t_list *stack_b);
+
 
 #endif
