@@ -62,12 +62,31 @@ static void	ft_check_min_max(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_strlen(argv[i]) > 10)
+		if (ft_strlen(argv[i]) > 11)
 			ft_print_error();
 		else if (ft_atoi(argv[i]) > 2147483647)
 			ft_print_error();
+		else if (ft_atoi(argv[i]) < INT_MIN)
+			ft_print_error();
 		i++;
 	}
+}
+
+int		check_if_ordered(char **argv)
+{
+	int	i;
+	int	comparator_before;
+
+	i = 2;
+	while (argv[i])
+	{
+		comparator_before = ft_atoi(argv[i - 1]);
+		if (comparator_before < ft_atoi(argv[i]))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }
 
 void	ft_check_all_errors(int argc, char **argv)
@@ -77,4 +96,6 @@ void	ft_check_all_errors(int argc, char **argv)
 	ft_check_args(argc, argv);
 	ft_check_double(argv);
 	ft_check_min_max(argv);
+	if (check_if_ordered(argv) == 1)
+		exit(EXIT_SUCCESS);
 }
