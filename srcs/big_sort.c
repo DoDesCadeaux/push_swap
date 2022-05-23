@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_index(t_list *stack_a, int	n)
+{
+	t_node *node;
+	int	index;
+
+	node = stack_a->first;
+	index = 0;
+	while (node != NULL)
+	{
+		if (node->value < n)
+			index++;
+		node = node->next;
+	}
+	return (index);
+}

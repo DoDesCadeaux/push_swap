@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_list	*init_list(char **argv)
+t_list	*init_list(void)
 {
 	t_list	*list;
 	t_node	*node;
@@ -21,7 +21,6 @@ t_list	*init_list(char **argv)
 	node = (t_node *)malloc(sizeof(*node));
 	if (!list || !node)
 		ft_print_error();
-	node->value = ft_atoi(argv[1]);
 	node->next = NULL;
 	list->first = node;
 	return (list);

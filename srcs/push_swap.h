@@ -22,6 +22,7 @@ typedef struct s_node		t_node;
 struct		s_node
 {
 	int		value;
+	int		index;
 	t_node	*next;
 };
 
@@ -37,7 +38,7 @@ size_t	ft_strlen(const char *str);
 long	ft_atoi(const char *str);
 void	ft_print_error(void);
 void	ft_check_all_errors(int argc, char **argv);
-t_list	*init_list(char **argv);
+t_list	*init_list(void);
 void	add_front(t_list *list, int newNb);
 void	print_list(t_list *list);
 void	add_back(t_list *list, int newNb);
@@ -65,5 +66,8 @@ void	sort_five_args(t_list *stack_a, t_list *stack_b);
 void	small_stack(t_list *stack_a, t_list *stack_b, int argc);
 int		size_of_list(t_list *list);
 int		check_if_ordered(char **argv);
+
+
+int	get_index(t_list *stack_a, int	node_value);
 
 #endif
