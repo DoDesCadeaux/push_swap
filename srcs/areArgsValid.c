@@ -24,7 +24,7 @@ static void	ft_check_args(int argc, char **argv)
 		while (argv[j][i])
 		{
 			if ((ft_is_digit(argv[j][i])) ||
-				(argv[j][i] == '-' && ft_is_digit(argv[j][i + 1])))
+				(argv[j][0] == '-' && ft_is_digit(argv[j][i + 1])))
 				i++;
 			else
 				ft_print_error();
@@ -72,7 +72,7 @@ static void	ft_check_min_max(char **argv)
 	}
 }
 
-int		check_if_ordered(char **argv)
+int	check_if_ordered(char **argv)
 {
 	int	i;
 	int	comparator_before;

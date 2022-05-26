@@ -48,34 +48,6 @@ int	main(int argc, char **argv)
 		node->value = node->index;
 		node = node->next;
 	}
-
 	if (argc > 6)
-	{
-		int	j = 0;
-		int	k = 0;
-		int size = size_of_list(stack_a);
-		int max_num = size - 1;
-		int max_bits = 0;
-
-		while ((max_num >> max_bits) != 0)
-			++max_bits;
-
-		while (j < max_bits)
-		{
-			k = 0;
-			while (k < size)
-			{
-				int top_num = stack_a->first->value;
-				if (((top_num >> j) &1) == 1)
-					rotate_a(stack_a, 1);
-				else
-					push_b(stack_a, stack_b);
-				k++;
-			}
-
-			while (stack_b->first != NULL)
-				push_a(stack_b, stack_a);
-			j++;
-		}
-	}
+		radix_sort(stack_a, stack_b);
 }
