@@ -57,3 +57,30 @@ void	three_last_index(t_list *stack_a, t_list *stack_b, int index)
 		push_a(stack_b, stack_a);
 	}
 }
+
+void	normi_index(int index, t_list *stack_a, t_list *stack_b)
+{
+	if (index == 0)
+	{
+		push_b(stack_a, stack_b);
+		sort_two_args(stack_a);
+		push_a(stack_b, stack_a);
+	}
+	else if (index == 1)
+	{
+		if (stack_a->first->value > stack_a->first->next->next->value)
+			rotate_a(stack_a, 1);
+		else
+			swap_a(stack_a, 1);
+	}
+	else if (index == 2)
+	{
+		if (stack_a->first->value > stack_a->first->next->value)
+		{
+			swap_a(stack_a, 1);
+			reverse_rotate_a(stack_a, 1);
+		}
+		else
+			reverse_rotate_a(stack_a, 1);
+	}
+}

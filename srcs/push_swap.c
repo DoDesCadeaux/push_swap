@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	t_node	*node;
+	int		size;
 	int		i;
 
 	ft_check_all_errors(argc, argv);
@@ -31,25 +33,10 @@ int	main(int argc, char **argv)
 	delete_first(stack_b);
 	if (argc < 7)
 		small_stack(stack_a, stack_b, argc);
-
-	//===========RADIX==============
-
-	t_node *node;
-
+	size = size_of_list(stack_a);
 	node = stack_a->first;
-	while (node)
-	{
-		node->index = get_index(stack_a, node->value);
-		node = node->next;
-	}
-	node = stack_a->first;
-	while (node)
-	{
-		node->value = node->index;
-		node = node->next;
-	}
+	do_index_sort(stack_a, node);
 	if (argc > 6)
-		radix_sort(stack_a, stack_b);
-	system("leaks push_swap");
+		radix_sort(stack_a, stack_b, size);
 	return (0);
 }

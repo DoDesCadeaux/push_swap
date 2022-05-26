@@ -87,20 +87,3 @@ void	delete_last(t_list *list)
 	new_last_node->next = NULL;
 	free(to_delete);
 }
-
-int	size_of_list(t_list *list)
-{
-	t_node	*node;
-	int size;
-
-	if (!list)
-		exit(EXIT_FAILURE);
-	size = 0;
-	node = list->first;
-	while (node != NULL)
-	{
-		size++;
-		node = node->next;
-	}
-	return size;
-}

@@ -65,7 +65,10 @@ void	sort_five_args(t_list *stack_a, t_list *stack_b);
 void	small_stack(t_list *stack_a, t_list *stack_b, int argc);
 int		size_of_list(t_list *list);
 int		check_if_ordered(char **argv);
-int		get_index(t_list *stack_a, int	node_value);
-void	radix_sort(t_list *stack_a, t_list *stack_b);
+int		get_index(t_list *stack_a, int node_value);
+void	normi_index(int index, t_list *stack_a, t_list *stack_b);
+void	radix_sort(t_list *stack_a, t_list *stack_b, int size);
+void	do_index_sort(t_list *stack_a, t_node *node);
+void	do_radix(int max_bits, int size, t_list *a, t_list *b);
 
 #endif

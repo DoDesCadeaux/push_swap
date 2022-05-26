@@ -51,3 +51,20 @@ int	biggest_value(t_list *stack)
 	}
 	return (max);
 }
+
+int	size_of_list(t_list *list)
+{
+	t_node	*node;
+	int		size;
+
+	if (!list)
+		exit(EXIT_FAILURE);
+	size = 0;
+	node = list->first;
+	while (node != NULL)
+	{
+		size++;
+		node = node->next;
+	}
+	return (size);
+}
