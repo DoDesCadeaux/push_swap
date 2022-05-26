@@ -19,27 +19,6 @@ int	ft_is_digit(char x)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t		i;
-	size_t		j;
-	char		*dest;
-
-	if (!s1 || !s2)
-		return (NULL);
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!dest)
-		return (NULL);
-	i = -1;
-	j = -1;
-	while (++i < ft_strlen(s1))
-		dest[i] = s1[i];
-	while (++j < ft_strlen(s2))
-		dest[i++] = s2[j];
-	dest[i] = '\0';
-	return (dest);
-}
-
 size_t	ft_strlen(const char *str)
 {
 	int	i;

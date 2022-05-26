@@ -50,4 +50,6 @@ int	main(int argc, char **argv)
 	}
 	if (argc > 6)
 		radix_sort(stack_a, stack_b);
+	system("leaks push_swap");
+	return (0);
 }

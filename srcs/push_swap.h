@@ -33,7 +33,6 @@ struct		s_list
 };
 
 int		ft_is_digit(char x);
-char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 long	ft_atoi(const char *str);
 void	ft_print_error(void);
