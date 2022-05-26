@@ -34,6 +34,7 @@ SRCS			=	areArgsValid.c\
 					double_operations.c\
 					little_sort.c\
 					sort_utils.c\
+					big_sort_utils.c\
 					big_sort.c
 
 MAIN			= push_swap.c
